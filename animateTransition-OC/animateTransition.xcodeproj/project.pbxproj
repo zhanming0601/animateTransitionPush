@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC77B0BC1CFE7130008C64E6 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC77B0BB1CFE7130008C64E6 /* SecondViewController.m */; };
 		DC9D35D41CF734FF00C47152 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9D35D31CF734FF00C47152 /* main.m */; };
 		DC9D35D71CF734FF00C47152 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9D35D61CF734FF00C47152 /* AppDelegate.m */; };
 		DC9D35DA1CF734FF00C47152 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9D35D91CF734FF00C47152 /* ViewController.m */; };
@@ -15,9 +16,7 @@
 		DC9D35ED1CF734FF00C47152 /* animateTransitionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9D35EC1CF734FF00C47152 /* animateTransitionTests.m */; };
 		DC9D35F81CF734FF00C47152 /* animateTransitionUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9D35F71CF734FF00C47152 /* animateTransitionUITests.m */; };
 		DC9D36071CF7352A00C47152 /* CustomAnimateTransitionPush.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9D36061CF7352A00C47152 /* CustomAnimateTransitionPush.m */; };
-		DC9D360A1CF7381C00C47152 /* PushViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9D36091CF7381C00C47152 /* PushViewController.m */; };
 		DC9D360D1CF73A2700C47152 /* CustomAnimateTransitionPop.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9D360C1CF73A2700C47152 /* CustomAnimateTransitionPop.m */; };
-		DC9D36101CF7417300C47152 /* CutomNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9D360F1CF7417300C47152 /* CutomNavigationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DC77B0BA1CFE7130008C64E6 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		DC77B0BB1CFE7130008C64E6 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		DC9D35CF1CF734FF00C47152 /* animateTransition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = animateTransition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC9D35D31CF734FF00C47152 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DC9D35D51CF734FF00C47152 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -55,12 +56,8 @@
 		DC9D35F91CF734FF00C47152 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC9D36051CF7352A00C47152 /* CustomAnimateTransitionPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAnimateTransitionPush.h; sourceTree = "<group>"; };
 		DC9D36061CF7352A00C47152 /* CustomAnimateTransitionPush.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAnimateTransitionPush.m; sourceTree = "<group>"; };
-		DC9D36081CF7381C00C47152 /* PushViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushViewController.h; sourceTree = "<group>"; };
-		DC9D36091CF7381C00C47152 /* PushViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushViewController.m; sourceTree = "<group>"; };
 		DC9D360B1CF73A2700C47152 /* CustomAnimateTransitionPop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAnimateTransitionPop.h; sourceTree = "<group>"; };
 		DC9D360C1CF73A2700C47152 /* CustomAnimateTransitionPop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAnimateTransitionPop.m; sourceTree = "<group>"; };
-		DC9D360E1CF7417300C47152 /* CutomNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CutomNavigationController.h; sourceTree = "<group>"; };
-		DC9D360F1CF7417300C47152 /* CutomNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CutomNavigationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +112,8 @@
 				DC9D35D61CF734FF00C47152 /* AppDelegate.m */,
 				DC9D35D81CF734FF00C47152 /* ViewController.h */,
 				DC9D35D91CF734FF00C47152 /* ViewController.m */,
+				DC77B0BA1CFE7130008C64E6 /* SecondViewController.h */,
+				DC77B0BB1CFE7130008C64E6 /* SecondViewController.m */,
 				DC9D35DE1CF734FF00C47152 /* Assets.xcassets */,
 				DC9D35E01CF734FF00C47152 /* LaunchScreen.storyboard */,
 				DC9D35E31CF734FF00C47152 /* Info.plist */,
@@ -123,10 +122,6 @@
 				DC9D36061CF7352A00C47152 /* CustomAnimateTransitionPush.m */,
 				DC9D360B1CF73A2700C47152 /* CustomAnimateTransitionPop.h */,
 				DC9D360C1CF73A2700C47152 /* CustomAnimateTransitionPop.m */,
-				DC9D36081CF7381C00C47152 /* PushViewController.h */,
-				DC9D36091CF7381C00C47152 /* PushViewController.m */,
-				DC9D360E1CF7417300C47152 /* CutomNavigationController.h */,
-				DC9D360F1CF7417300C47152 /* CutomNavigationController.m */,
 			);
 			path = animateTransition;
 			sourceTree = "<group>";
@@ -287,9 +282,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC9D35DA1CF734FF00C47152 /* ViewController.m in Sources */,
-				DC9D360A1CF7381C00C47152 /* PushViewController.m in Sources */,
-				DC9D36101CF7417300C47152 /* CutomNavigationController.m in Sources */,
 				DC9D36071CF7352A00C47152 /* CustomAnimateTransitionPush.m in Sources */,
+				DC77B0BC1CFE7130008C64E6 /* SecondViewController.m in Sources */,
 				DC9D360D1CF73A2700C47152 /* CustomAnimateTransitionPop.m in Sources */,
 				DC9D35D71CF734FF00C47152 /* AppDelegate.m in Sources */,
 				DC9D35D41CF734FF00C47152 /* main.m in Sources */,

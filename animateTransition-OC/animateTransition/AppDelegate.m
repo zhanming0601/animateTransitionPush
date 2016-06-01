@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
-#import "CutomNavigationController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -21,7 +21,7 @@
     
     ViewController *main=[ViewController new];
     
-    CutomNavigationController *nav=[[CutomNavigationController alloc] initWithRootViewController:main];
+    UINavigationController *nav=[[UINavigationController alloc] initWithRootViewController:main];
     self.window=[[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor=[UIColor whiteColor];
   

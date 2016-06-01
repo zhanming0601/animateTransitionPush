@@ -8,7 +8,8 @@
 
 #import "ViewController.h"
 #import "CustomAnimateTransitionPush.h"
-#import "PushViewController.h"
+
+#import "SecondViewController.h"
 @interface ViewController ()<UINavigationControllerDelegate>
 
 @property(strong,nonatomic)NSArray <UIButton*> *arrayBtn;
@@ -26,10 +27,69 @@
     [super viewDidLoad];
    
     self.view.backgroundColor=[UIColor colorWithRed:0.98f green:0.97f blue:0.90f alpha:1.00f];
+    self.title=@"自定义转场动画";
     
-    
+    //设置button
     [self setButton];
 
+}
+
+
+//用来自定义转场动画
+-(id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC
+{
+    
+    if(operation==UINavigationControllerOperationPush)
+    {
+        CustomAnimateTransitionPush *animateTransitionPush=[CustomAnimateTransitionPush new];
+        return animateTransitionPush;
+    }
+    else
+    {
+        return nil;
+    }
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    // 必须在viewDidAppear或者viewWillAppear中写，因为每次都需要将delegate设为当前界面
+    self.navigationController.delegate=self;
+    
+    [self setBtnAnimation];
+    
+}
+
+-(void)btnclick:(UIButton *)btn
+{
+    self.button=btn;
+    
+    
+    
+    
+    SecondViewController *push=[SecondViewController new];
+    
+    if(btn == self.btnA)
+    {
+        push.myImage=[UIImage imageNamed:@"IMG_1"];
+        
+    }else if(btn == self.btnB)
+    {
+        push.myImage=[UIImage imageNamed:@"IMG_2"];
+        
+    }else if(btn == self.btnC)
+    {
+        push.myImage=[UIImage imageNamed:@"IMG_3"];
+        
+    }else if(btn == self.btnD)
+    {
+        push.myImage=[UIImage imageNamed:@"IMG_4"];
+    }
+
+    
+    [self.navigationController pushViewController:push animated:YES];
 }
 
 -(void)setButton
@@ -80,6 +140,8 @@
     self.arrayBtn=@[btnA,btnB,btnC,btnD];
 
 }
+
+#pragma -mark 这里的动画只使用了CoreAnimation，使用简单的代码实现了button的浮动，给大家一个思路，没有封装代码也比较垃圾，请见谅
 
 -(void)setBtnAnimation
 {
@@ -182,38 +244,10 @@
     
 }
 
--(void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-     self.navigationController.delegate=self;
-    
-    [self setBtnAnimation];
-    
-}
-
--(void)btnclick:(UIButton *)btn
-{
-    self.button=btn;
-    PushViewController *push=[PushViewController new];
-    
-    [self.navigationController pushViewController:push animated:YES];
-}
 
 
--(id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC
-{
- 
-    if(operation==UINavigationControllerOperationPush)
-    {
-        CustomAnimateTransitionPush *animateTransitionPush=[CustomAnimateTransitionPush new];
-        return animateTransitionPush;
-    }
-    else
-    {
-        return nil;
-    }
-    
-}
+
+
 
 
 - (void)didReceiveMemoryWarning {

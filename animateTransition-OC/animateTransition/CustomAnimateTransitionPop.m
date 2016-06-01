@@ -8,7 +8,7 @@
 
 #import "CustomAnimateTransitionPop.h"
 #import "ViewController.h"
-#import "PushViewController.h"
+#import "SecondViewController.h"
 @implementation CustomAnimateTransitionPop
 - (NSTimeInterval)transitionDuration:(id <UIViewControllerContextTransitioning>)transitionContext{
     return 0.7f;
@@ -18,7 +18,7 @@
     
     self.transitionContext = transitionContext;
     
-    PushViewController *fromVC = (PushViewController *)[transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+    SecondViewController *fromVC = (SecondViewController *)[transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     ViewController *toVC   = (ViewController *)[transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     UIView *containerView = [transitionContext containerView];
     UIButton *button = toVC.button;

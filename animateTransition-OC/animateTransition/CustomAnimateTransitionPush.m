@@ -8,7 +8,7 @@
 
 #import "CustomAnimateTransitionPush.h"
 #import "ViewController.h"
-#import "PushViewController.h"
+#import "SecondViewController.h"
 
 @interface CustomAnimateTransitionPush()
 @property (nonatomic,strong)id<UIViewControllerContextTransitioning> transitionContext;
@@ -28,15 +28,22 @@
     
     self.transitionContext=transitionContext;
     
+    // 获取动画的源控制器和目标控制器
     ViewController * fromVC = (ViewController *)[transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
-    PushViewController *toVC = (PushViewController *)[transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
+    SecondViewController *toVC = (SecondViewController *)[transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
+    
+    //获取容器视图
     UIView *contView = [transitionContext containerView];
     
     UIButton *button = fromVC.button;
     
     UIBezierPath *maskStartBP =  [UIBezierPath bezierPathWithOvalInRect:button.frame];
+    // 都添加到container中。注意顺序
     [contView addSubview:fromVC.view];
     [contView addSubview:toVC.view];
+    
+    
+    //*******************************下面代码就是自定义动画了大家把想要实现的动画写在下面即可**********************//
     
     //创建两个圆形的 UIBezierPath 实例；一个是 button 的 size ，另外一个则拥有足够覆盖屏幕的半径。最终的动画则是在这两个贝塞尔路径之间进行的
     CGPoint finalPoint;
@@ -77,6 +84,9 @@
     maskLayerAnimation.delegate = self;
     
     [maskLayer addAnimation:maskLayerAnimation forKey:@"path"];
+    
+    
+    //*******************************上面代码就是自定义动画了大家把想要实现的动画写在上面即可**********************//
 }
 
 #pragma mark - CABasicAnimation的Delegate
