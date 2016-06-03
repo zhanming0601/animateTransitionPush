@@ -57,36 +57,63 @@
       当用户的下拉手势完成时，调用finishInteractiveTransition或者cancelInteractiveTransition，UIKit会自动执行剩下的一半动画，
       或者让动画回到最开始的状态。*/
     
-  
-    
+
     if([gestureRecognizer translationInView:self.view].x>=0)
     {
         //手势滑动的比例
         CGFloat per = [gestureRecognizer translationInView:self.view].x / (self.view.bounds.size.width);
         per = MIN(1.0,(MAX(0.0, per)));
-        
         if (gestureRecognizer.state == UIGestureRecognizerStateBegan) {
             
             self.interactiveTransition=[UIPercentDrivenInteractiveTransition new];
             
             [self.navigationController popViewControllerAnimated:YES];
-            
         }else if (gestureRecognizer.state == UIGestureRecognizerStateChanged){
-            
-            [ self.interactiveTransition updateInteractiveTransition:per];
+            if([gestureRecognizer translationInView:self.view].x ==0)
+            {
+                [self.interactiveTransition updateInteractiveTransition:0.01];
+            }
+            else
+            {
+                [self.interactiveTransition updateInteractiveTransition:per];
+                
+            }
             
         }else if (gestureRecognizer.state == UIGestureRecognizerStateEnded || gestureRecognizer.state == UIGestureRecognizerStateCancelled){
-            if (per > 0.5) {
+            
+            if([gestureRecognizer translationInView:self.view].x ==0)
+            {
+                [self.interactiveTransition cancelInteractiveTransition];
+                self.interactiveTransition = nil;
+            }
+            else if (per > 0.5) {
+                
                 [ self.interactiveTransition finishInteractiveTransition];
+                
+                
             }else{
                 [ self.interactiveTransition cancelInteractiveTransition];
             }
-             self.interactiveTransition = nil;
+            self.interactiveTransition = nil;
+            
         }
         
         
     }
-}
+    else if (gestureRecognizer.state == UIGestureRecognizerStateChanged){
+        
+        
+        
+        [self.interactiveTransition updateInteractiveTransition:0.01];
+        [self.interactiveTransition cancelInteractiveTransition];
+        
+        
+        
+    }else if ((gestureRecognizer.state == UIGestureRecognizerStateEnded || gestureRecognizer.state == UIGestureRecognizerStateCancelled))
+    {
+        
+        self.interactiveTransition = nil;
+    }}
 
 //为这个动画添加用户交互
 - (id <UIViewControllerInteractiveTransitioning>)navigationController:(UINavigationController *)navigationController
